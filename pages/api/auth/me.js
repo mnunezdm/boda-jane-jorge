@@ -2,7 +2,6 @@ import {
   InvalidTokenError,
   NoAuthenticationProvidedError,
 } from "../../../lib/auth/auth";
-import getDbConnection from "../../../lib/provider/db";
 
 import { removeTokenCookie } from "../../../lib/auth/auth-cookies";
 import { getCurrentUser } from "../../../lib/auth/user";
@@ -15,8 +14,7 @@ import { getCurrentUser } from "../../../lib/auth/user";
  */
 export default async function me(request, response) {
   try {
-    const connectorPromise = getDbConnection();
-    const user = await getCurrentUser(request, connectorPromise);
+    const user = await getCurrentUser(request);
 
     response.status(200).json({ data: user.toJson(), isLogged: true });
   } catch (error) {

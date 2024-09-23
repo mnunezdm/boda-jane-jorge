@@ -1,4 +1,3 @@
-import getDbConnection from "../../lib/provider/db.mjs";
 import {
   Confirmation,
   Confirmations,
@@ -18,16 +17,14 @@ import { removeTokenCookie } from "../../lib/auth/auth-cookies.js";
  * @returns
  */
 export default async function confirmations(request, response) {
-  const connectorPromise = getDbConnection();
-
   const { method } = request;
   switch (method) {
     case "GET":
       try {
         // assure user is connected
-        await getCurrentUser(request, connectorPromise);
+        await getCurrentUser(request);
         response.statusCode = 200;
-        response.json(await Confirmations.getConfirmations(connectorPromise));
+        response.json(await Confirmations.getConfirmations());
       } catch (e) {
         if (e instanceof InvalidTokenError) {
           removeTokenCookie(response);
@@ -49,13 +46,12 @@ export default async function confirmations(request, response) {
       break;
     case "POST":
       const { body } = request;
-      const dbConnection = await connectorPromise;
 
       try {
         Confirmation.validate(body);
         const confirmation = Confirmation.fromJson(body);
 
-        await confirmation.insert(dbConnection);
+        await confirmation.insert();
         response.statusCode = 201;
         response.json(confirmation);
       } catch (e) {

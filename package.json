@@ -20,6 +20,7 @@
   "dependencies": {
     "@babel/core": "^7.17.9",
     "@hapi/iron": "^6.0.0",
+    "@vercel/postgres": "^0.10.0",
     "caniuse-lite": "^1.0.30001663",
     "chalk": "^5.0.1",
     "cookie": "^0.4.2",

@@ -1,5 +1,4 @@
 import { createUser } from "../../../lib/auth/user";
-import getDbConnection from "../../../lib/provider/db";
 
 /**
  *
@@ -9,9 +8,8 @@ import getDbConnection from "../../../lib/provider/db";
  */
 export default async function signup(request, response) {
   if (parseInt(process.env.NEXT_PUBLIC_ENABLE_SIGNUP)) {
-    const connectorPromise = getDbConnection();
     try {
-      await createUser(connectorPromise, request.body);
+      await createUser(request.body);
       response.redirect("/api/auth/login");
     } catch (error) {
       console.error(error);

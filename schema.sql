@@ -1,48 +1,34 @@
-CREATE TABLE `confirmation` (
-	`id` bigint unsigned NOT NULL AUTO_INCREMENT,
-	`created_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP(),
-	`need_bus_to_city` tinyint(1),
-	`need_bus_to_restaurant` tinyint(1),
-	`extra_information` varchar(512),
-	`must_have_song` varchar(128),
-	PRIMARY KEY (`id`),
-	UNIQUE KEY `id` (`id`)
-) ENGINE InnoDB,
-  CHARSET utf8mb4,
-  COLLATE utf8mb4_0900_ai_ci;
+CREATE TABLE confirmation (
+    id BIGSERIAL PRIMARY KEY,
+    created_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    need_bus_to_city BOOLEAN,
+    need_bus_to_restaurant BOOLEAN,
+    extra_information VARCHAR(512),
+    must_have_song VARCHAR(128),
+    UNIQUE (id)
+);
 
-CREATE TABLE `confirmation_member` (
-	`id` bigint unsigned NOT NULL AUTO_INCREMENT,
-	`first_name` varchar(64),
-	`last_name` varchar(64),
-	`confirmation_id` int NOT NULL,
-	PRIMARY KEY (`id`),
-	UNIQUE KEY `id` (`id`)
-) ENGINE InnoDB,
-  CHARSET utf8mb4,
-  COLLATE utf8mb4_0900_ai_ci;
+CREATE TABLE confirmation_member (
+    id BIGSERIAL PRIMARY KEY,
+    first_name VARCHAR(64),
+    last_name VARCHAR(64),
+    confirmation_id INT NOT NULL,
+    UNIQUE (id)
+);
 
+CREATE TABLE session (
+    sid VARCHAR(256) NOT NULL,
+    sess VARCHAR(256) NOT NULL,
+    expire TIMESTAMP(6) NOT NULL,
+    PRIMARY KEY (sid)
+);
 
-CREATE TABLE `session` (
-	`sid` varchar(256) NOT NULL,
-	`sess` varchar(256) NOT NULL,
-	`expire` timestamp(6) NOT NULL,
-	PRIMARY KEY (`sid`)
-) ENGINE InnoDB,
-  CHARSET utf8mb4,
-  COLLATE utf8mb4_0900_ai_ci;
-
-CREATE TABLE `user_` (
-	`id` bigint unsigned NOT NULL AUTO_INCREMENT,
-	`salt` varchar(32) NOT NULL,
-	`username` varchar(32) NOT NULL,
-	`password` varchar(256) NOT NULL,
-	`first_name` varchar(64),
-	`last_name` varchar(64),
-	PRIMARY KEY (`id`),
-	UNIQUE KEY `id` (`id`),
-	UNIQUE KEY `username` (`username`)
-) ENGINE InnoDB,
-  CHARSET utf8mb4,
-  COLLATE utf8mb4_0900_ai_ci;
-
+CREATE TABLE user_ (
+    id BIGSERIAL PRIMARY KEY,
+    salt VARCHAR(32) NOT NULL,
+    username VARCHAR(32) NOT NULL,
+    password VARCHAR(256) NOT NULL,
+    first_name VARCHAR(64),
+    last_name VARCHAR(64),
+    UNIQUE (username)
+);
