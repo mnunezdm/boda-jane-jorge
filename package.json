@@ -1,0 +1,55 @@
+{
+  "name": "wedding-template",
+  "version": "0.1.0",
+  "description": "Web para la pagina de Jane y John",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && rm -rf .next/ && npm install && npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mnunezdm/wedding-template.git"
+  },
+  "keywords": [],
+  "author": "Miguel Núñez Díaz-Montes",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.17.9",
+    "@hapi/iron": "^6.0.0",
+    "caniuse-lite": "^1.0.30001663",
+    "chalk": "^5.0.1",
+    "cookie": "^0.4.2",
+    "datebook": "^7.0.8",
+    "luxon": "^3.0.1",
+    "moment": "^2.30.1",
+    "mysql2": "^2.3.3",
+    "next": "^12.2.0",
+    "next-compose-plugins": "2.2.1",
+    "next-connect": "^0.12.1",
+    "next-images": "1.8.4",
+    "normalize-text": "^2.4.0",
+    "passport": "^0.5.2",
+    "passport-local": "^1.0.0",
+    "planetscale-node": "^0.3.0",
+    "react": "17.0.2",
+    "react-countdown": "^2.3.2",
+    "react-dom": "^17.0.2",
+    "react-hook-form": "^7.27.0",
+    "react-spinners": "^0.11.0",
+    "sharp": "^0.30.7",
+    "swr": "^1.2.2",
+    "uuid": "^8.3.2",
+    "webpack": "^5.69.1",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@vercel/node": "^1.13.0",
+    "eslint": "^8.13.0",
+    "eslint-config-next": "^12.2.0",
+    "typescript": "^4.6.3"
+  }
+}
