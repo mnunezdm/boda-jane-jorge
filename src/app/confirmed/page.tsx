@@ -6,14 +6,14 @@ import Link from "next/link";
 // Components
 import { CustomCountdown } from "../../components/countdown";
 
-const WEDDING_DATE = process.env.NEXT_PUBLIC_WEDDINGDATE as string;
+const WEDDING_DATE = process.env.NEXT_PUBLIC_WEDDING_DATE as string;
 
 export default function ConfirmedPage() {
   return (
     <>
       <Head>
         <meta name="robots" content="noindex"></meta>
-        <title>Boda de Jane y John | Confimración</title>
+        <title>Boda de Jane y Jorge | Confirmación</title>
       </Head>
       <section>
         <article>

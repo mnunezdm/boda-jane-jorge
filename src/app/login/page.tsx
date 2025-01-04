@@ -10,7 +10,7 @@ export default function LoginPage() {
     <>
       <Head>
         <meta name="robots" content="noindex"></meta>
-        <title>Boda de Jane y John | Login</title>
+        <title>Boda de Jane y Jorge | Login</title>
       </Head>
       <section className="login-section">
         <LoginForm></LoginForm>

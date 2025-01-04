@@ -3,7 +3,6 @@
 import React from "react";
 import Head from "next/head";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 
 // Sections for this page
 import ConfirmationsSection from "../../components/pages-sections/admin/confirmations";
@@ -25,7 +24,7 @@ export default function AdminPage() {
     <>
       <Head>
         <meta name="robots" content="noindex"></meta>
-        <title>Boda de Jane y John | Admin</title>
+        <title>Boda de Jane y Jorge | Admin</title>
       </Head>
       <header className="admin-header">
         <h2>{user?.greeting()}</h2>

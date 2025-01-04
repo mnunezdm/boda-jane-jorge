@@ -1,20 +1,22 @@
 import type { Metadata } from "next";
-import { Dancing_Script, Lora } from "next/font/google";
+import { Open_Sans, Courgette } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Dancing_Script({
-  variable: "--font-dancing-script",
+const openSans = Open_Sans<"--font-open-sans">({
+  variable: "--font-open-sans",
   subsets: ["latin"],
+  style: ["italic", "normal"],
+  weight: "variable",
 });
 
-const geistMono = Lora({
-  variable: "--font-lora",
-  subsets: ["latin"],
+const courgette = Courgette<"--font-courgette-400">({
+  variable: "--font-courgette-400",
+  weight: "400",
 });
 
 export const metadata: Metadata = {
-  title: "Boda de Jane y John",
-  description: "Boda de Jane y John",
+  title: "Boda de Jane y Jorge",
+  description: "Boda de Jane y Jorge",
   robots: "noindex",
 };
 
@@ -26,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${courgette.variable} ${openSans.variable} antialiased`}
       >
         {children}
       </body>

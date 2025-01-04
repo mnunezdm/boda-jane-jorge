@@ -1,6 +1,6 @@
-# Boda de Jane y John
+# Boda de Jane y Jorge
 
-Repositorio para la boda de Jane y John
+Repositorio para la boda de Jane y Jorge
 
 ## Variables de entorno
 

@@ -1,9 +1,8 @@
 import React from "react";
-import Image from "next/image";
 
-import { CustomCountdown } from "../../../components/countdown";
+import { CustomCountdown } from "../../countdown";
 
-const WEDDING_DATE = process.env.NEXT_PUBLIC_WEDDINGDATE;
+const WEDDING_DATE = new Date(process.env.NEXT_PUBLIC_WEDDING_DATE as string);
 
 export default function CountdownSection() {
   return (
@@ -16,14 +15,6 @@ export default function CountdownSection() {
         </p>
         <p>Estamos contando los días para despegar</p>
         <CustomCountdown date={WEDDING_DATE}></CustomCountdown>
-        <picture>
-          <Image
-            src="/images/landing/paper-plane.png"
-            alt=""
-            width="250"
-            height="150"
-          />
-        </picture>
       </article>
     </section>
   );
