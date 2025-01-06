@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-import { getTokenCookieMiddleware } from "./lib/auth/auth-cookies";
+import { getTokenCookieMiddleware } from "./src/lib/auth/auth-cookies";
 
 const LOCATIONS = {
   admin: "admin",
