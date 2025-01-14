@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import Countdown, { CountdownRendererFn } from "react-countdown";
 
 export interface CustomCountdownProps {
@@ -8,7 +8,6 @@ export interface CustomCountdownProps {
 }
 
 export function CustomCountdown({ date }: CustomCountdownProps) {
-  const [start, setStart] = useState(false);
   const countdownWidget = useRef<Countdown>(null);
 
   useEffect(() => {
@@ -39,7 +38,7 @@ export function CustomCountdown({ date }: CustomCountdownProps) {
         ref={countdownWidget}
         date={date}
         renderer={renderer}
-        autoStart={start}
+        autoStart={false}
       ></Countdown>
     </div>
   );
