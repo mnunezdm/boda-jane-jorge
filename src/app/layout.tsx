@@ -11,6 +11,7 @@ const openSans = Open_Sans<"--font-open-sans">({
 
 const courgette = Courgette<"--font-courgette-400">({
   variable: "--font-courgette-400",
+  subsets: ["latin-ext"],
   weight: "400",
 });
 
