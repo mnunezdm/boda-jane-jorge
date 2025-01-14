@@ -15,6 +15,7 @@ import { type Metadata } from "next";
 const NEXT_PUBLIC_WEDDING_DATE = process.env.NEXT_PUBLIC_WEDDING_DATE;
 
 const weddingDate = moment(NEXT_PUBLIC_WEDDING_DATE);
+import "moment/locale/es";
 
 export const metadata: Metadata = {
   title: "Boda de Jane y Jorge",
