@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { JSX, useRef } from "react";
 
 import { MdContentCopy } from "react-icons/md";
 
@@ -22,12 +22,14 @@ export interface CopyableEventProps {
   textToCopy: string;
   children: React.ReactNode;
   className?: string;
+  Tag?: keyof JSX.IntrinsicElements;
 }
 
 export function CopyableEvent({
   children,
   textToCopy,
   className,
+  Tag = "span",
 }: CopyableEventProps) {
   const ref = useRef<HTMLSpanElement>(null);
 
@@ -46,9 +48,9 @@ export function CopyableEvent({
   };
 
   return (
-    <span onClick={copy} className={className}>
+    <Tag onClick={copy} className={className}>
       <span ref={ref}>{children}</span>
       <MdContentCopy className="inline mx-2" />
-    </span>
+    </Tag>
   );
 }

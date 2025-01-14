@@ -171,15 +171,11 @@ h3 {
 }
 
 .present-article .text-iban {
-  -webkit-margin-before: 12px;
-  margin-block-start: 12px;
   font-size: x-large;
 }
 
 @media screen and (max-width: 700px) {
   .present-article .text-iban {
-    -webkit-margin-before: 12px;
-    margin-block-start: 12px;
     font-size: large;
   }
 }

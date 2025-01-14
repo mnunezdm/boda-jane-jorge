@@ -4,9 +4,10 @@ import React from "react";
 
 import { CopyableEvent } from "@/components/copyableText";
 
-export default function PresentSection() {
-  const IBAN = process.env.NEXT_PUBLIC_IBAN || "";
+const IBAN = process.env.NEXT_PUBLIC_IBAN || "";
+const SWIFT = process.env.NEXT_PUBLIC_SWIFT || "";
 
+export default function PresentSection() {
   return (
     <section>
       <article className="present-article">
@@ -16,9 +17,24 @@ export default function PresentSection() {
           de disfrutar.
         </p>
         <p>Pero si queréis…</p>
-        <CopyableEvent textToCopy={IBAN} className="text-iban">
-          {IBAN}
-        </CopyableEvent>
+        <dl>
+          <dt>IBAN:</dt>
+          <CopyableEvent textToCopy={IBAN} className="text-iban mt-3" Tag="dd">
+            {IBAN}
+          </CopyableEvent>
+          {SWIFT && (
+            <>
+              <dt className="mt-6">SWIFT:</dt>
+              <CopyableEvent
+                textToCopy={SWIFT}
+                className="text-iban mt-3"
+                Tag="dd"
+              >
+                {SWIFT}
+              </CopyableEvent>
+            </>
+          )}
+        </dl>
       </article>
     </section>
   );
