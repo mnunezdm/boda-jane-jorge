@@ -14,24 +14,17 @@ import type { Metadata } from "next";
 
 const NEXT_PUBLIC_WEDDING_DATE = process.env.NEXT_PUBLIC_WEDDING_DATE;
 
-const weddingDate = moment(NEXT_PUBLIC_WEDDING_DATE);
-import "moment/locale/es";
 import { Locale } from "@/lib/i18n";
+import { AiOutlineGlobal } from "react-icons/ai";
 
 export const metadata: Metadata = {
   title: "Boda de Jane y Jorge",
   description: "Boda de Jane y Jorge",
   robots: "noindex",
-  formatDetection: {
-    telephone: false,
-  },
 };
 
-export default async function LandingPage(props: {
-  params: Promise<{ lang: Locale }>;
-}) {
-  const { lang } = await props.params;
-  console.log(lang);
+export default async function LandingPage() {
+  const weddingDate = moment(NEXT_PUBLIC_WEDDING_DATE).locale(Locale.EN);
   return (
     <>
       <header>
@@ -44,13 +37,23 @@ export default async function LandingPage(props: {
           </div>
         </div>
       </header>
-      <main>
-        <WelcomeSection />
-        <CeremoniesSection />
-        <RsvpSection />
-        <PresentSection />
-        <CountdownSection />
-        <ContactSection />
+      <main className="relative">
+        <div className="absolute change-locale-button py-4 px-3 right-0">
+          <Link
+            href="/en"
+            className="border border-gray-300 px-4 py-1.5 rounded-lg"
+          >
+            go to
+            <AiOutlineGlobal className="inline-block mx-1"></AiOutlineGlobal>
+            version
+          </Link>
+        </div>
+        <WelcomeSection locale={Locale.ES} />
+        <CeremoniesSection locale={Locale.ES} />
+        <RsvpSection locale={Locale.ES} />
+        <PresentSection locale={Locale.ES} />
+        <CountdownSection locale={Locale.ES} />
+        <ContactSection locale={Locale.ES} />
       </main>
       <footer>
         &copy; 2025, made with ❤ by&nbsp;

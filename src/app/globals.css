@@ -101,6 +101,11 @@ section {
   border: 1px solid #eaeaea;
 }
 
+section,
+.change-locale-button {
+  margin-inline: 10%;
+}
+
 section article {
   display: flex;
   flex-direction: column;
@@ -512,8 +517,12 @@ footer a {
   }
 
   section {
-    margin-inline: 12px;
     margin-block: 24px;
+  }
+
+  section,
+  .change-locale-button {
+    margin-inline: 12px;
   }
 }
 
