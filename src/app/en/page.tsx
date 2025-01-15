@@ -44,7 +44,7 @@ export default async function LandingPage() {
             href="/es"
             className="border border-gray-300 px-4 py-1.5 rounded-lg"
           >
-            versión
+            versión en
             <GiSpain className="inline-block ms-1"></GiSpain>
           </Link>
         </div>
