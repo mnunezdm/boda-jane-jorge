@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Open_Sans, Courgette } from "next/font/google";
-import "./globals.css";
+import "@/app/globals.css";
 
 const openSans = Open_Sans<"--font-open-sans">({
   variable: "--font-open-sans",
@@ -27,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html>
       <body
         className={`${courgette.variable} ${openSans.variable} antialiased`}
       >

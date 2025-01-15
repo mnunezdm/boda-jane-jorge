@@ -4,18 +4,19 @@ import Link from "next/link";
 import moment from "moment";
 
 // Sections for this page
-import RsvpSection from "../components/pages-sections/landing/Rsvp";
-import CeremoniesSection from "../components/pages-sections/landing/Ceremonies";
-import WelcomeSection from "../components/pages-sections/landing/Welcome";
-import PresentSection from "../components/pages-sections/landing/Present";
-import CountdownSection from "../components/pages-sections/landing/Countdown";
-import ContactSection from "../components/pages-sections/landing/Contact";
-import { type Metadata } from "next";
+import RsvpSection from "../../components/pages-sections/landing/Rsvp";
+import CeremoniesSection from "../../components/pages-sections/landing/Ceremonies";
+import WelcomeSection from "../../components/pages-sections/landing/Welcome";
+import PresentSection from "../../components/pages-sections/landing/Present";
+import CountdownSection from "../../components/pages-sections/landing/Countdown";
+import ContactSection from "../../components/pages-sections/landing/Contact";
+import type { Metadata } from "next";
 
 const NEXT_PUBLIC_WEDDING_DATE = process.env.NEXT_PUBLIC_WEDDING_DATE;
 
 const weddingDate = moment(NEXT_PUBLIC_WEDDING_DATE);
 import "moment/locale/es";
+import { Locale } from "@/lib/i18n";
 
 export const metadata: Metadata = {
   title: "Boda de Jane y Jorge",
@@ -26,7 +27,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default function LandingPage() {
+export default async function LandingPage(props: {
+  params: Promise<{ lang: Locale }>;
+}) {
+  const { lang } = await props.params;
+  console.log(lang);
   return (
     <>
       <header>
