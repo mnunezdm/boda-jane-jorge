@@ -14,6 +14,7 @@ import type { Metadata } from "next";
 
 import { Locale } from "@/lib/i18n";
 import { GiSpain } from "react-icons/gi";
+import TravelSection from "@/components/pages-sections/landing/Travel";
 
 export const metadata: Metadata = {
   title: "Jane & Jorge's Wedding",
@@ -50,6 +51,7 @@ export default async function LandingPage() {
         </div>
         <WelcomeSection locale={Locale.EN} />
         <CeremoniesSection locale={Locale.EN} />
+        <TravelSection></TravelSection>
         <RsvpSection locale={Locale.EN} />
         <PresentSection locale={Locale.EN} />
         <CountdownSection locale={Locale.EN} />
