@@ -2,8 +2,8 @@ import { Locale } from "@/lib/i18n";
 import React from "react";
 
 const H2 = {
-  [Locale.EN]: "We need your confirmation:",
-  [Locale.ES]: "Necesitamos tu confirmación:",
+  [Locale.EN]: "Hello everyone!",
+  [Locale.ES]: "¡Hola a todos!",
 };
 const TEXT = {
   [Locale.ES]: [
