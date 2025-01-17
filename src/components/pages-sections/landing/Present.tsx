@@ -25,6 +25,43 @@ const TEXT = {
   ],
 };
 
+function PresentSpain() {
+  return (
+    <>
+      <dt>IBAN:</dt>
+      <CopyableEvent
+        textToCopy={IBAN}
+        className="text-iban mt-3 cursor-copy"
+        Tag="dd"
+      >
+        {IBAN}
+      </CopyableEvent>
+      <dt className="mt-6">SWIFT:</dt>
+      <CopyableEvent
+        textToCopy={SWIFT}
+        className="text-iban mt-3 cursor-copy"
+        Tag="dd"
+      >
+        {SWIFT}
+      </CopyableEvent>
+    </>
+  );
+}
+
+function PresentInternational() {
+  return (
+    <>
+      <dt className="mt-6">REVOLUT:</dt>
+      <dd>
+        <Link href={REVOLUT} target="_blank">
+          {REVOLUT}
+          <SiRevolut className="inline-block ms-2"></SiRevolut>
+        </Link>
+      </dd>
+    </>
+  );
+}
+
 export default function PresentSection({ locale }: { locale: Locale }) {
   return (
     <section>
@@ -34,31 +71,7 @@ export default function PresentSection({ locale }: { locale: Locale }) {
           <p key={index}>{text}</p>
         ))}
         <dl>
-          <dt>IBAN:</dt>
-          <CopyableEvent
-            textToCopy={IBAN}
-            className="text-iban mt-3 cursor-copy"
-            Tag="dd"
-          >
-            {IBAN}
-          </CopyableEvent>
-
-          <dt className="mt-6">SWIFT:</dt>
-          <CopyableEvent
-            textToCopy={SWIFT}
-            className="text-iban mt-3 cursor-copy"
-            Tag="dd"
-          >
-            {SWIFT}
-          </CopyableEvent>
-
-          <dt className="mt-6">REVOLUT:</dt>
-          <dd>
-            <Link href={REVOLUT} target="_blank">
-              {REVOLUT}
-              <SiRevolut className="inline-block ms-2"></SiRevolut>
-            </Link>
-          </dd>
+          {locale === Locale.ES ? <PresentSpain /> : <PresentInternational />}
         </dl>
       </article>
     </section>
