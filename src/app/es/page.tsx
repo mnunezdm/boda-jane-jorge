@@ -1,7 +1,10 @@
 import React from "react";
 import Link from "next/link";
+import type { Metadata } from "next";
 
 import moment from "moment";
+import "moment/locale/es";
+import { AiOutlineGlobal } from "react-icons/ai";
 
 // Sections for this page
 import RsvpSection from "../../components/pages-sections/landing/Rsvp";
@@ -10,12 +13,8 @@ import WelcomeSection from "../../components/pages-sections/landing/Welcome";
 import PresentSection from "../../components/pages-sections/landing/Present";
 import CountdownSection from "../../components/pages-sections/landing/Countdown";
 import ContactSection from "../../components/pages-sections/landing/Contact";
-import type { Metadata } from "next";
-
-const NEXT_PUBLIC_WEDDING_DATE = process.env.NEXT_PUBLIC_WEDDING_DATE;
 
 import { Locale } from "@/lib/i18n";
-import { AiOutlineGlobal } from "react-icons/ai";
 
 export const metadata: Metadata = {
   title: "Boda de Jane y Jorge",
@@ -23,8 +22,10 @@ export const metadata: Metadata = {
   robots: "noindex",
 };
 
+const NEXT_PUBLIC_WEDDING_DATE = process.env.NEXT_PUBLIC_WEDDING_DATE;
+
 export default async function LandingPage() {
-  const weddingDate = moment(NEXT_PUBLIC_WEDDING_DATE).locale(Locale.EN);
+  const weddingDate = moment(NEXT_PUBLIC_WEDDING_DATE).locale(Locale.ES);
   return (
     <>
       <header>

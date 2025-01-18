@@ -21,9 +21,9 @@ const H2 = {
 };
 const TEXT = {
   [Locale.EN]: [
-    "we will be waiting for you to celebrate it at {location}, {address}",
+    "We will be waiting for you to celebrate it at {location}, {address}",
   ],
-  [Locale.ES]: ["os esperamos para celebrarlo en {location}, {address}"],
+  [Locale.ES]: ["Os esperamos para celebrarlo en {location}, {address}"],
 };
 const ICS_NAME = {
   [Locale.EN]: "Jane & Jorge's Wedding",

@@ -18,10 +18,10 @@ const H2 = {
 
 const TEXT = {
   [Locale.EN]: [
-    "the most important thing is that you are with us on this special day and we do not need more than your company, but if you want to make us a gift for our new adventure, we will be very grateful.",
+    "The most important thing is that you are with us on this special day and we do not need more than your company, but if you want to make us a gift for our new adventure, we will be very grateful.",
   ],
   [Locale.ES]: [
-    "pero aunque lo más importante es que estéis con nosotros en este día tan especial y no necesitamos más que vuestra compañía, si queréis hacernos un regalo para nuestra nueva aventura, os lo agradeceremos mucho",
+    "Pero aunque lo más importante es que estéis con nosotros en este día tan especial y no necesitamos más que vuestra compañía, si queréis hacernos un regalo para nuestra nueva aventura, os lo agradeceremos mucho",
   ],
 };
 

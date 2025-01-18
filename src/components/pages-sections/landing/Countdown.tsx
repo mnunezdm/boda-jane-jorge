@@ -10,8 +10,8 @@ const H2 = {
   [Locale.ES]: "Poniéndonos serios...",
 };
 const TEXT = {
-  [Locale.EN]: ["we are counting the days to take off..."],
-  [Locale.ES]: ["estamos contando los días para despegar..."],
+  [Locale.EN]: ["We are counting the days to take off..."],
+  [Locale.ES]: ["Estamos contando los días para despegar..."],
 };
 
 export default function CountdownSection({ locale }: { locale: Locale }) {
