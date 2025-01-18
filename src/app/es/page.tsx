@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import type { Metadata } from "next";
 
-import moment from "moment";
+import moment from "moment-timezone";
 import "moment/locale/es";
 import { AiOutlineGlobal } from "react-icons/ai";
 
@@ -25,7 +25,9 @@ export const metadata: Metadata = {
 const NEXT_PUBLIC_WEDDING_DATE = process.env.NEXT_PUBLIC_WEDDING_DATE;
 
 export default async function LandingPage() {
-  const weddingDate = moment(NEXT_PUBLIC_WEDDING_DATE).locale(Locale.ES);
+  const weddingDate = moment(NEXT_PUBLIC_WEDDING_DATE)
+    .locale(Locale.ES)
+    .tz("Europe/Madrid");
   return (
     <>
       <header>

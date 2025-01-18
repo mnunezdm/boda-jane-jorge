@@ -4,7 +4,7 @@ import React from "react";
 
 import { addToCalendar } from "../../../lib/utils/calendar";
 
-import moment from "moment";
+import moment from "moment-timezone";
 import { Locale } from "@/lib/i18n";
 
 const WEDDING_DATE = process.env.NEXT_PUBLIC_WEDDING_DATE;
@@ -41,7 +41,9 @@ const BUTTON_CALENDAR = {
 };
 
 export default function CeremoniesSection({ locale }: { locale: Locale }) {
-  const startDateBanquet = moment(WEDDING_DATE).locale(locale);
+  const startDateBanquet = moment(WEDDING_DATE)
+    .locale(locale)
+    .tz("Europe/Madrid");
   const endDateBanquet = startDateBanquet.clone().add(8, "hour");
 
   const buildCalendar = () => {

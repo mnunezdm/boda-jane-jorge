@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-import moment from "moment";
+import moment from "moment-timezone";
 
 // Sections for this page
 import RsvpSection from "../../components/pages-sections/landing/Rsvp";
@@ -25,7 +25,9 @@ export const metadata: Metadata = {
 const NEXT_PUBLIC_WEDDING_DATE = process.env.NEXT_PUBLIC_WEDDING_DATE;
 
 export default async function LandingPage() {
-  const weddingDate = moment(NEXT_PUBLIC_WEDDING_DATE).locale(Locale.EN);
+  const weddingDate = moment(NEXT_PUBLIC_WEDDING_DATE)
+    .locale(Locale.EN)
+    .tz("Europe/Madrid");
 
   return (
     <>
