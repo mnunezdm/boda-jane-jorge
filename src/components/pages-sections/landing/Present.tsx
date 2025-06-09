@@ -11,6 +11,11 @@ const IBAN = process.env.NEXT_PUBLIC_IBAN || "";
 const SWIFT = process.env.NEXT_PUBLIC_SWIFT || "";
 const REVOLUT = process.env.NEXT_PUBLIC_REVOLUT || "";
 
+const ACCOUNT_NAME = process.env.NEXT_PUBLIC_PRESENT_EN_NAME || "";
+const BANK_NAME = process.env.NEXT_PUBLIC_PRESENT_EN_BANK_NAME || "";
+const ACCOUNT_NUMBER = process.env.NEXT_PUBLIC_PRESENT_EN_ACCOUNT_NUMBER || "";
+const BRANCH_CODE = process.env.NEXT_PUBLIC_PRESENT_EN_BRANCH_CODE || "";
+
 const H2 = {
   [Locale.EN]: "The Best Gift: You",
   [Locale.ES]: "El Mejor Regalo: Vosotros",
@@ -58,6 +63,40 @@ function PresentInternational() {
           <SiRevolut className="inline-block ms-2"></SiRevolut>
         </Link>
       </dd>
+      <div className="separator"></div>
+      <dt className="mt-6">Account Holder:</dt>
+      <CopyableEvent
+        textToCopy={ACCOUNT_NAME}
+        className="text-iban mt-3 cursor-copy"
+        Tag="dd"
+      >
+        {ACCOUNT_NAME}
+      </CopyableEvent>
+      <dt className="mt-6">Account Number:</dt>
+      <CopyableEvent
+        textToCopy={ACCOUNT_NUMBER}
+        className="text-iban mt-3 cursor-copy"
+        Tag="dd"
+      >
+        {ACCOUNT_NUMBER}
+      </CopyableEvent>
+      <dt className="mt-6">Bank Name:</dt>
+      <CopyableEvent
+        textToCopy={BANK_NAME}
+        className="text-iban mt-3 cursor-copy"
+        Tag="dd"
+      >
+        {BANK_NAME}
+      </CopyableEvent>
+      <dd></dd>
+      <dt className="mt-6">Branch Code:</dt>
+      <CopyableEvent
+        textToCopy={BRANCH_CODE}
+        className="text-iban mt-3 cursor-copy"
+        Tag="dd"
+      >
+        {BRANCH_CODE}
+      </CopyableEvent>
     </>
   );
 }
