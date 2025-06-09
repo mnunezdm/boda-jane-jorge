@@ -26,3 +26,6 @@ yarn-error.log*
 /dist
 /.next
 .vercel
+
+public/images/next-image-export-optimizer-hashes.json
+nextImageExportOptimizer
