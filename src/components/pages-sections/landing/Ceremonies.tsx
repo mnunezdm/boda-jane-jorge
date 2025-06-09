@@ -173,7 +173,7 @@ export default function CeremoniesSection({ locale }: { locale: Locale }) {
       <h2 className="self-center">
         {H2[locale]
           .replace("{day}", weddingDate.format("D"))
-          .replace("{month}", weddingDate.format("MMMM"))}
+          .replace("{month}", weddingDate.locale(locale).format("MMMM"))}
       </h2>
 
       <WhereParroquia locale={locale} />
