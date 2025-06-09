@@ -48,9 +48,13 @@ const TEXT_BANQUET = {
     "Y la celebración continuará a las {time} en {location}, {address}",
   ],
 };
-const ICS_NAME = {
-  [Locale.EN]: "Jane & Jorge's Wedding",
-  [Locale.ES]: "Boda Jane y Jorge",
+const ICS_CEREMONY_NAME = {
+  [Locale.EN]: "Jane & Jorge's Wedding: Ceremony",
+  [Locale.ES]: "Boda Jane y Jorge: Ceremonia",
+};
+const ICS_BANQUET_NAME = {
+  [Locale.EN]: "Jane & Jorge's Wedding: Banquet",
+  [Locale.ES]: "Boda Jane y Jorge: Banquete",
 };
 
 const BUTTON_MAPS = {
@@ -71,7 +75,7 @@ function WhereParroquia({ locale }: { locale: Locale }) {
 
   const buildCalendar = () => {
     addToCalendar("ceremonia.ics", {
-      title: "Ceremonia Boda Jane y Jorge",
+      title: ICS_CEREMONY_NAME[locale],
       location: WEDDING_CEREMONY_LOCATION_NAME,
       start: startDateCeremony.toDate(),
       end: endDateCeremony.toDate(),
@@ -120,7 +124,7 @@ function WhereBanquete({ locale }: { locale: Locale }) {
 
   const buildCalendar = () => {
     addToCalendar("boda.ics", {
-      title: ICS_NAME[locale],
+      title: ICS_BANQUET_NAME[locale],
       location: `${WEDDING_BANQUET_LOCATION_NAME}, ${WEDDING_BANQUET_LOCATION_ADDRESS}`,
       start: startDateBanquet.toDate(),
       end: endDateBanquet.toDate(),
