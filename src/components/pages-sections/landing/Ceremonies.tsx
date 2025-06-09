@@ -29,7 +29,7 @@ const WEDDING_BANQUET_LOCATION_LINK =
   process.env.NEXT_PUBLIC_WEDDING_BANQUET_LOCATION_LINK || "";
 
 const H2 = {
-  [Locale.EN]: "So then, the {day} of {month}...",
+  [Locale.EN]: "So then, the {day}th of {month}...",
   [Locale.ES]: "Entonces el día {day} de {month}...",
 };
 const TEXT_CEREMONY = {
